@@ -18,9 +18,6 @@ load_dotenv(find_dotenv())
 
 SECRET_KEY = os.environ['SECRET_KEY']
 STRIPE_KEY = os.environ['STRIPE_KEY']
-STRIPE_KEY='sk_test_51LirZXBJl49q98MGbBAWnLXiJsBuwYNy3ygCe2eTHGIUFI2mbMA4pil1CS12UM1As6h3hbfkjEmartnWSRCMiCC7005iJcsSPg'
-SECRET_KEY='django-insecure-3kvk5#@1k_u3c32nn+g0-$8+4ny$o&4m@oyz=_-pm384!wg133'
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +28,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['commerce-env.eba-pdg4gqrk.us-west-2.elasticbeanstalk.com', '127.0.0.1']
 ALLOWED_HOSTS = []
