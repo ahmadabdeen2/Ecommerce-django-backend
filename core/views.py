@@ -8,9 +8,12 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import api_view,  permission_classes
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
+from django.http import JsonResponse
 
 # Create your views here.
 
+def welcome(request):
+    return JsonResponse({'message': 'Welcome to the backend'})
 
 class ProfileViewSet(ModelViewSet):
     queryset = Profile.objects.all()

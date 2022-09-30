@@ -3,13 +3,14 @@ from rest_framework.routers import DefaultRouter
 from .views import ProfileViewSet
 from rest_framework.authtoken.views import obtain_auth_token
 from django.urls import path
-from .views import get_my_details
+from .views import get_my_details, welcome
 
 router = DefaultRouter()
 
 router.register(r'users', ProfileViewSet)
 
 urlpatterns = [
+   path('welcome/', welcome, name='welcome'),
    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
    path('get_my_details/', get_my_details, name='get_my_details'),
 ] + router.urls

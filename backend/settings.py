@@ -18,6 +18,9 @@ load_dotenv(find_dotenv())
 
 SECRET_KEY = os.environ['SECRET_KEY']
 STRIPE_KEY = os.environ['STRIPE_KEY']
+STRIPE_KEY='sk_test_51LirZXBJl49q98MGbBAWnLXiJsBuwYNy3ygCe2eTHGIUFI2mbMA4pil1CS12UM1As6h3hbfkjEmartnWSRCMiCC7005iJcsSPg'
+SECRET_KEY='django-insecure-3kvk5#@1k_u3c32nn+g0-$8+4ny$o&4m@oyz=_-pm384!wg133'
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,10 +31,10 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
+# ALLOWED_HOSTS = ['commerce-env.eba-pdg4gqrk.us-west-2.elasticbeanstalk.com', '127.0.0.1']
+ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'core.Profile'
 # Application definition
 
@@ -93,18 +96,15 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'comm',
-        'USER': 'postgres',
-        'PASSWORD': 'ahmadov',
-        'HOST': 'localhost',
-        'PORT':'5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -142,7 +142,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+
+# STATICFILES_DIRS = [
+#     STATIC_DIR,
+# ]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 MEDIA_URL = 'media/'
 
 
